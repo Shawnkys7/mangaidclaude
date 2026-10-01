@@ -1,0 +1,8 @@
+{
+  "name": "MangaID",
+  "description": "Aplikasi baca manga bahasa Indonesia dengan pembaruan komik terbaru, terpopuler, dan fitur membaca yang nyaman.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

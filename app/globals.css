@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "SF Pro Rounded", system-ui, sans-serif;
+  --font-editorial: 'Instrument Serif', 'Newsreader', Georgia, 'Times New Roman', serif;
+}
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "SF Pro Rounded", system-ui, sans-serif;
+  }
+  html, body {
+    background-color: #121214;
+    color: #ffffff;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "SF Pro Rounded", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.015em;
+  }
+  input, textarea, button, select {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "SF Pro Rounded", system-ui, sans-serif;
+  }
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', 'Newsreader', Georgia, 'Times New Roman', serif !important;
+}
+
+/* Block image context menu and long-press download popup in browser */
+img {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  pointer-events: auto;
+}
+
+/* Make all scrollbars completely transparent - no grey slide bar on edges */
+*::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+*::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border: none !important;
+}
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Hide scrollbar classes */
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+}
+.scrollbar-none {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Simple, fast & lightweight skeleton loading without heavy gradients */
+@keyframes skeletonPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.animate-shimmer {
+  background-color: #1f2027;
+  animation: skeletonPulse 0.85s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Touch and highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+input, textarea {
+  user-select: auto;
+}
